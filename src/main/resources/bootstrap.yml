@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: ${MARATHON_APP_LABEL_ENVIRONMENT:-desa}
+  application:
+    name: ${CONFIG_APP:-demo-springboot}
+  cloud:
+    config:
+      failFast: true
+      uri: ${CONFIG_URL:-http://cc-server-java.marathon.l4lb.thisdcos.directory:8000}
+      label: ${CONFIG_BRANCH:-master}
+      enabled: ${CONFIG_ENABLED:false}

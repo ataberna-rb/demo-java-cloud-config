@@ -1,0 +1,6 @@
+database:
+  url: jdbc:postgresql:/localhost:5432/instance
+  username: foo
+  password: bar
+# secreto: ${secret:foo}
+# secreto2: ${secret2:foo}

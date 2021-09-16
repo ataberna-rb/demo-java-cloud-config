@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+    base-springboot:
+        image: demo-springboot:1.0.0
+        restart: always
+        network_mode: host
+        environment: 
+            - CONFIG_APP=demo-springboot 
+            - CONFIG_ENABLED=true 
+            - CONFIG_URL=http://127.0.0.1:28002 
+            - CONFIG_BRANCH=spring-cloud-config-test 
+            - MARATHON_APP_LABEL_ENVIRONMENT=desa
+        volumes:
+            - ./volumes/demo-springboot/m2:/root/.m2
+            - ./volumes/demo-springboot/logs:/var/sources/logs/
+        ports:
+            - 8080:8080
+            - 8787:8787
